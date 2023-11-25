@@ -1,4 +1,4 @@
-# Use an official Python runtime as a parent image
+# Use an official Python image
 FROM python:3.9
 
 # Set the working directory in the container
@@ -15,7 +15,6 @@ COPY . /app
 
 ##copy model
 COPY Model /app/Model
-
 
 # Make port 8000 available to what fastapi will run on
 EXPOSE 8000
