@@ -18,7 +18,7 @@ model = joblib.load("Model/best_rf_model.joblib")
 
 # Endpoint to get predictions
 @app.post("/predict")
-async def predict_sepsis(
+def predict_sepsis(
     Plasma_glucose: int = Query(..., description="Plasma_glucose"),
     Blood_Work_R1: int = Query(..., description="Blood_Work_R1"),
     Blood_Pressure: int = Query(..., description="Blood_Pressure"),
