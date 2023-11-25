@@ -48,5 +48,3 @@ def predict_sepsis(
 
     # Return the prediction
     return {"prediction": sepsis_status}
-
-
