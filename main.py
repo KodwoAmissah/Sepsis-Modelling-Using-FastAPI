@@ -1,5 +1,5 @@
 ##import libraries
-from fastapi import FastAPI, Query,HTTPException
+from fastapi import FastAPI, Query
 import uvicorn
 import joblib
 import pandas as pd
