@@ -1,5 +1,5 @@
 ##import libraries
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, Query,HTTPException
 import uvicorn
 import joblib
 import pandas as pd
@@ -29,22 +29,28 @@ def predict_sepsis(
     Age: int = Query(..., description="Age")
    
 ):
-    # Convert input data to the format expected by the model
-    input_data = pd.DataFrame([{
-        "Plasma_glucose": Plasma_glucose,
-        "Blood_Work_R1": Blood_Work_R1,
-        "Blood_Pressure": Blood_Pressure,
-        "Blood_Work_R2": Blood_Work_R2,
-        "Blood_Work_R3": Blood_Work_R3,
-        "BMI": BMI,
-        "Blood_Work_R4": Blood_Work_R4,
-        "Age": Age
-    }])
+    try:
+        # Convert input data to the format expected by the model
+        input_data = pd.DataFrame([{
+            "Plasma_glucose": Plasma_glucose,
+            "Blood_Work_R1": Blood_Work_R1,
+            "Blood_Pressure": Blood_Pressure,
+            "Blood_Work_R2": Blood_Work_R2,
+            "Blood_Work_R3": Blood_Work_R3,
+            "BMI": BMI,
+            "Blood_Work_R4": Blood_Work_R4,
+            "Age": Age
+        }])
 
-    # Make prediction
-    prediction = model.predict(input_data)[0]
+        # Make prediction
+        prediction = model.predict(input_data)[0]
 
-    sepsis_status = "Patient has sepsis" if prediction == 1 else "Patient does not have sepsis"
+        sepsis_status = "Patient has sepsis" if prediction == 1 else "Patient does not have sepsis"
 
-    # Return the prediction
-    return {"prediction": sepsis_status}
+        # Return the prediction
+        return {"prediction": sepsis_status}
+    
+    except Exception:
+        # Handle other exceptions during prediction
+        error_message = f"An error occurred during prediction contact admin via email:kodwoam@gmail.com"
+        return {"error": error_message}
