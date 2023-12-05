@@ -38,7 +38,7 @@ Run the Docker Container: Once the image is built, run the Docker container usin
 
 ## Summary
 
- | Project's Name | Published Article  | Deployed App |Docker Hub|
+ | Project's Name | Published Article  | Deployed App |Docker Hub Repository|
 |:--------------:|:--------------:|:--------------:|:--------------:|
 | Sepsis Prediction Using Fastapi|[Project Article](https://medium.com/@kodwoam/building-a-sepsis-prediction-app-using-fastapi-5b07e074c57d) |    [Deployed App](https://kodwo11-sepsisapp.hf.space/docs)| [Docker Hub](https://hub.docker.com/repository/docker/mrkodwo35/sepsis_app/general)
   
