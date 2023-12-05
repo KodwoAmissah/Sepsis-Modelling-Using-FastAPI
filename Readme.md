@@ -54,4 +54,4 @@ Visit my LinkedIn:<https://www.linkedin.com/in/kodwoamissahmensah>
 
 ### ✨ Acknowledgments
 
-I would like to express my gratitude to The Azubi Africa team for their valuable contributions to enable me gain this knowlege and understanding to do this project
+I would like to express my gratitude to The Azubi Africa team for their valuable contributions to enable me gain this knowledge and understanding to do this project
